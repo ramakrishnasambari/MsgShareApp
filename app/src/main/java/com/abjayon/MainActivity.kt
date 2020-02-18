@@ -21,9 +21,11 @@ class MainActivity : AppCompatActivity() {
 
         btnSendMsgToNextActivity.setOnClickListener{
             val message = etUserMessage.text.toString()
-            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 
+            //explicit intent
             val intent = Intent(this, SecondActivity::class.java)
+            intent.putExtra("userMsg", message) //send data to Second Activity
             startActivity(intent)
 
         }
